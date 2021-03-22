@@ -1,0 +1,25 @@
+
+<div> <span class="h5"> POSTS LISTED!</span> </div>
+<div *ngIf="dataLoaded==false" class="spinner-border text-danger" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+<table class="table table-success">
+  <thead>
+    <tr *ngIf="dataLoaded!=false">
+      <th>Id</th>
+      <th>Kullanıcı Id</th>
+      <th>Başlık</th>
+      <th>İçerik</th>
+    
+    </tr>
+  </thead>
+  <tr *ngFor="let post of posts">
+   
+    <td>{{ post.id }}</td>
+    <td>{{ post.userId }}</td>
+    <td>{{ post.title }}</td>
+    <td>{{ post.body }}</td>
+  
+  </tr>
+</table>
